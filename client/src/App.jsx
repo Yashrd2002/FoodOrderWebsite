@@ -9,7 +9,7 @@ import Login from "./components/Login/Login";
 import Verify from "./pages/Verify/Verify";
 import NotFound from "./pages/NotFound/NotFound";
 import MyOrders from "./pages/MyOrders/MyOrders";
-import Promo from "./pages/AddPromo/Promo";
+
 
 function App() {
   const [showLogin, setshowLogin] = useState(false);
@@ -36,7 +36,7 @@ function App() {
           <Route path="/verify" element={<Verify />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/Myorders" element={<MyOrders />} />
-          <Route path="/promo" element={<Promo />} />
+
         </Routes>
       </div>
       <Footer />

@@ -50,36 +50,36 @@ const Navbar = ({ setshowLogin }) => {
           onClick={() => setmenu("home")}
           className={menu == "home" ? "active" : ""}
         >
-          home
+          Home
         </Link>
         <a
-          href="#explore-menu"
+          href="/#explore-menu"
           onClick={() => setmenu("menu")}
           className={menu == "menu" ? "active" : ""}
         >
-          menu
+          Menu
         </a>
         <a
-          href="#AppDownload"
-          onClick={() => setmenu("mobile")}
+          href="/Myorders"
+          // onClick={() => setmenu("mobile")}
           className={menu == "mobile" ? "active" : ""}
         >
-          mobile
+         Orders
         </a>
-        <a
+        {/* <a
           href="#footer"
           onClick={() => setmenu("contact")}
           className={menu == "contact" ? "active" : ""}
         >
           contact
-        </a>
+        </a> */}
       </ul>
       <div className="navbar-right">
-        <img src={assets.search_icon} alt="" />
+        {/* <img src={assets.search_icon} alt="" /> */}
 
         <div className="navbar-search-icon">
           <Link to="/cart">
-            <img src={assets.basket_icon} alt="" />
+            <img src={assets.cart} alt="" />
           </Link>
           <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>
         </div>

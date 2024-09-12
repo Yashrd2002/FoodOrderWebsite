@@ -8,7 +8,6 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Category from "./pages/category/Category";
 import Profile from "./pages/Profile/Profile";
-import Promo from "./pages/AddPromo/Promo";
 
 function App() {
   return (
@@ -36,7 +35,6 @@ function App() {
           <Route path="/orders" element={<Order />} />
           <Route path="/category" element={<Category />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/promo" element={<Promo />} />
         </Routes>
       </div>
     </div>
