@@ -8,7 +8,7 @@ function List() {
   const [category, setCategory] = useState([]);
   // console.log("Server URL:", import.meta.env.VITE_API_URL);
   const fetchData = async () => {
-    const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/food/list`);
+    const response = await axios.get(`https://foodorderwebsite-ac6o.onrender.com/api/food/list`);
 
     if (response.data.success) {
       setlist(response.data.data);
@@ -18,7 +18,7 @@ function List() {
   };
 
   const deleteFood = async (id) => {
-    const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/food/remove`, {
+    const response = await axios.post(`https://foodorderwebsite-ac6o.onrender.com/api/food/remove`, {
       id,
     });
 
@@ -30,7 +30,7 @@ function List() {
     }
   };
   const deleteFodCategory = async (id) => {
-    const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/food/removeCategory`, {
+    const response = await axios.post(`https://foodorderwebsite-ac6o.onrender.com/api/food/removeCategory`, {
       id,
     });
 
@@ -44,7 +44,7 @@ function List() {
 
   const fetchCategory = async () => {
     const response = await axios.get(
-      `${import.meta.env.VITE_API_URL}/api/food/getCategory`
+      `https://foodorderwebsite-ac6o.onrender.com/api/food/getCategory`
     );
     console.log(response);
     
@@ -75,7 +75,7 @@ function List() {
         {list.map((item, idx) => {
           return (
             <div key={idx} className="list-table-format">
-              <img src={`${import.meta.env.VITE_API_URL}/images/${item.image}`} alt="" />
+              <img src={`https://foodorderwebsite-ac6o.onrender.com/images/${item.image}`} alt="" />
               <p>{item.name}</p>
               <p>{item.category}</p>
               <p>${item.price}</p>
@@ -98,7 +98,7 @@ function List() {
         {category.map((item, idx) => {
           return (
             <div key={idx} className="list-table-format">
-              <img src={`${import.meta.env.VITE_API_URL}/images/${item.image}`} alt="" />
+              <img src={`https://foodorderwebsite-ac6o.onrender.com/images/${item.image}`} alt="" />
               <p>{item.category}</p>
               <p onClick={() => deleteFodCategory(item._id)} className="delete">
                 X

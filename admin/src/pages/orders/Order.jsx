@@ -9,7 +9,7 @@ function Order() {
 
   const fetchData = async () => {
     const response = await axios.get(
-      `${import.meta.env.VITE_API_URL}/api/order/allOrders`
+      `https://foodorderwebsite-ac6o.onrender.com/api/order/allOrders`
     );
 
     if (response.data.success) {
@@ -23,7 +23,7 @@ function Order() {
 
   const statusHandler = async (id, status) => {
     const response = await axios.post(
-      `${import.meta.env.VITE_API_URL}/api/order/updateOrderStatus`,
+      `https://foodorderwebsite-ac6o.onrender.com/api/order/updateOrderStatus`,
       {
         orderId: id,
         status,

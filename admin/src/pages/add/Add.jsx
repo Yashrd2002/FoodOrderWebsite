@@ -28,7 +28,7 @@ function Add() {
     formData.append("price", Number(data.price));
 
     const res = await axios.post(
-      `${import.meta.env.VITE_API_URL}/api/food/add`,
+      `https://foodorderwebsite-ac6o.onrender.com/api/food/add`,
       formData
     );
 
@@ -48,7 +48,7 @@ function Add() {
   };
   useEffect(()=>{
     const getCat = async()=>{
-      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/food/getCategory`)
+      const res = await axios.get(`https://foodorderwebsite-ac6o.onrender.com/api/food/getCategory`)
       // console.log(res.data);
       
       if(res.data.success){

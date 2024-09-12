@@ -20,7 +20,7 @@ const Category = () => {
     formData.append("category", category);
 
     const res = await axios.post(
-      `${import.meta.env.VITE_API_URL}/api/food/addCategory`,
+      `https://foodorderwebsite-ac6o.onrender.com/api/food/addCategory`,
       formData
     );
 

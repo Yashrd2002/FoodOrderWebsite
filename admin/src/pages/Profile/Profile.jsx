@@ -23,7 +23,7 @@ const Profile = () => {
   
   const getContent = async () => {
     const response = await axios.get(
-      `${import.meta.env.VITE_API_URL}/api/content/getcontent`
+      `https://foodorderwebsite-ac6o.onrender.com/api/content/getcontent`
     );
 
 
@@ -39,10 +39,10 @@ const Profile = () => {
         ColorTheme: response.data.data[0].ColorTheme,
       });
       setimagepresent(
-        `${import.meta.env.VITE_API_URL}/images/${response.data.data[0].Navbarlogo}`
+        `https://foodorderwebsite-ac6o.onrender.com/images/${response.data.data[0].Navbarlogo}`
       );
       setHeroimagepresent(
-        `${import.meta.env.VITE_API_URL}/images/${response.data.data[0].HeroImage}`
+        `https://foodorderwebsite-ac6o.onrender.com/images/${response.data.data[0].HeroImage}`
       );
     } else {
       toast.error(response.data.message);
@@ -83,7 +83,7 @@ const Profile = () => {
     
 
     const res = await axios.post(
-      `${import.meta.env.VITE_API_URL}/api/content/addcontent`,
+      `https://foodorderwebsite-ac6o.onrender.com/api/content/addcontent`,
       formData
     );
 
