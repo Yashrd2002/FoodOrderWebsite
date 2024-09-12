@@ -1,5 +1,5 @@
 import NavBar from "./components/NavBar/NavBar";
-import SideBar from "./components/SideBar/SideBar";
+import SideBar from "./components/SideBar/SideBar"
 import { Routes, Route } from "react-router-dom";
 import Add from "./pages/add/Add";
 import List from "./pages/list/List";
@@ -16,7 +16,7 @@ function App() {
       <NavBar />
       <hr />
       <div className="app-content">
-        <SideBar />
+       <SideBar/>
         <Routes>
           <Route
             path="/"

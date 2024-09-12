@@ -2,7 +2,7 @@ import "./SideBar.css";
 import { assets } from "../../assets/assets";
 import { NavLink } from "react-router-dom";
 
-function SideBar() {
+const SideBar = () => {
   return (
     <div className="w-2/12 min-h-screen border-2 pt-10 p-5 md:block hidden">
       <div className="flex flex-col h-full">
@@ -32,7 +32,7 @@ function SideBar() {
         </NavLink>
       </div>
     </div>
-  );
+  )
 }
 
-export default SideBar;
+export default SideBar
