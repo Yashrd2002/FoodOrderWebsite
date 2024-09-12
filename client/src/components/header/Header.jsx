@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./Header.css";
 import axios from "axios";
+import { StoreContext } from "../../context/StoreContext";
 
 function Header() {
   const [image, setImage] = useState(null);
@@ -8,9 +9,10 @@ function Header() {
     Title: "Order Now your food",
     desc: "Food Store is an online food ordering system that allows customers to browse a wide variety of menus, place orders, and even track their order.",
   });
+  const { url } = useContext(StoreContext);
   const getContent = async () => {
     const response = await axios.get(
-      "http://localhost:8000/api/content/getcontent"
+      `${url}/api/content/getcontent`
     );
 
     if (response.data.success) {
@@ -21,7 +23,7 @@ function Header() {
         desc:response.data.data[0].HeroDesc
       })
       setImage(
-        `http://localhost:8000/images/${response.data.data[0].HeroImage}`
+        `${url}/images/${response.data.data[0].HeroImage}`
       );
     } else {
       // toast.error(response.data.message);

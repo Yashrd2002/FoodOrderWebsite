@@ -10,7 +10,7 @@ function ExploreMenu({ category, setcategory }) {
   const [cat, setCat] = useState([]);
   useEffect(() => {
     const getCat = async () => {
-      const res = await axios.get("http://localhost:8000/api/food/getCategory");
+      const res = await axios.get(`${url}/api/food/getCategory`);
       // console.log(res.data);
 
       if (res.data.success) {

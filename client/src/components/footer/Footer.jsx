@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { assets } from "../../assets/assets";
 import "./Footer.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { StoreContext } from "../../context/StoreContext";
 
 function Footer() {
   const [logo, setLogo] = useState(null);
+  const { url } = useContext(StoreContext);
   const [data, setdata] = useState({
     ContactNo: "",
     ContactEmail: "",
@@ -15,7 +17,7 @@ function Footer() {
   });
   const getContent = async () => {
     const response = await axios.get(
-      "http://localhost:8000/api/content/getcontent"
+      `${url}/api/content/getcontent`
     );
 
     if (response.data.success) {
@@ -27,7 +29,7 @@ function Footer() {
         SocialInstagram:response.data.data[0].SocialInstagram,
       });
       setLogo(
-        `http://localhost:8000/images/${response.data.data[0].Navbarlogo}`
+        `${url}/images/${response.data.data[0].Navbarlogo}`
       );
     } else {
       // toast.error(response.data.message);

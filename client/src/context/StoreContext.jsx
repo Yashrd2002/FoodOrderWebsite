@@ -9,7 +9,7 @@ const StoreContextProvider = (props) => {
   const [food_list, setFoodList] = useState([]);
   const [userName, setUserName] = useState("");
   const [color, setColor] = useState(null);
-  const url = "http://localhost:8000";
+  const url = `${import.meta.env.VITE_API_URL}`;
   const [token, settoken] = useState("");
 
   const addToCart = async (itemId) => {

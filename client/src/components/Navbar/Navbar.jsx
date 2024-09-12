@@ -7,7 +7,7 @@ import axios from "axios";
 
 // eslint-disable-next-line react/prop-types
 const Navbar = ({ setshowLogin }) => {
-  const { getTotalCartAmount, token, settoken, userName } =
+  const { getTotalCartAmount, token, settoken, userName,url } =
     useContext(StoreContext);
   const [logo,setLogo]=useState(null);
   const naviate = useNavigate();
@@ -16,6 +16,7 @@ const Navbar = ({ setshowLogin }) => {
     localStorage.removeItem("token");
     naviate("/");
   };
+  
 
   // eslint-disable-next-line no-unused-vars
   const [menu, setmenu] = useState("home");
@@ -23,13 +24,13 @@ const Navbar = ({ setshowLogin }) => {
 
   const getContent = async () => {
     const response = await axios.get(
-      "http://localhost:8000/api/content/getcontent"
+      `${url}/api/content/getcontent`
     );
 
 
     if (response.data.success) {
       setLogo(
-        `http://localhost:8000/images/${response.data.data[0].Navbarlogo}`
+        `${url}/images/${response.data.data[0].Navbarlogo}`
       );
       
     } else {
